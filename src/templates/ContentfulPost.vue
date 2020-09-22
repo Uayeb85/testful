@@ -5,7 +5,9 @@
                 <h1> {{$page.post.title}}</h1>
             </div>
             <g-image v-for="imagen in $page.post.imagenPortada" :src="imagen.url" :key="imagen.id" class="galeria"/>
-           <p style="color:blue"> {{ $page.post.texto2 }}  </p> 
+           <div v-for="blog in $page.allBlog.edges" :key="blog.id">
+             <div v-html="blog.node.content"></div>
+           </div>
            <ul v-for="lista in $page.post.list.laboratorio.servicios" :key="lista.id">
               <li> {{lista.Tarea}} </li> 
 
@@ -39,6 +41,15 @@ query Post ($path: String!) {
         disenos{
           Diseno
         }
+      }
+    }
+  }
+    allBlog{
+    edges{
+      node{
+        title
+        excerpt
+        content
       }
     }
   }

@@ -10,6 +10,11 @@
                 <g-link :to="`/post/${post.node.slug}`"> <button class="boton">más información</button> </g-link>
 
             </div>
+            <div v-for="blog in $page.allBlog.edges" :key="blog.id">
+              <h2>{{blog.node.title}}</h2>
+              <div v-html="blog.node.content"> </div>
+
+            </div>
         </div>
     </section>
 </template>
@@ -25,6 +30,15 @@ query{
         imagenPortada{
           url
         }
+      }
+    }
+  }
+  allBlog{
+    edges{
+      node{
+        title
+        excerpt
+        content
       }
     }
   }

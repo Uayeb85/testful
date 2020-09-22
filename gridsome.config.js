@@ -16,6 +16,16 @@ module.exports = {
         environment: 'master',
         typeName: 'Contentful',
       }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'blog/**/*.md',
+        typeName: 'Blog',
+        remark: {
+          // remark options
+        }
+      }
     }
   ],
   templates:{
@@ -23,6 +33,12 @@ module.exports = {
     ContentfulFibra:'/fibras/:slug',
     ContentfulCrc: '/crc/:slug',
     ContentfulSoluciones: '/soluciones/:slug',
-    ContentfulPost: '/post/:slug'
+    ContentfulPost: '/post/:slug',
+    Blog:[
+      {
+        path: "/blog/:title",
+        component:"./src/templates/Blog.vue"
+      }
+    ]
   },
 }
