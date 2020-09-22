@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{eeGo:function(t,e,n){"use strict";n.r(e);var s=n("KHd+"),i=null,l=Object(s.a)({},(function(){var t=this.$createElement,e=this._self._c||t;return e("layout",[e("h2",[this._v(this._s(this.$page.servicios.titulo))])])}),[],!1,null,null,null);"function"==typeof i&&i(l);e.default=l.exports}}]);
